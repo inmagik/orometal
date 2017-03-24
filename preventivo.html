@@ -60,28 +60,44 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12 contacts">
-        <p>Compila il form qui sotto per richiedere un preventivo. I campi contrassegnati con * (asterisco) sono obbligatori.</p>
+        <p class="preventivo-text">Compila il form qui sotto per richiedere un preventivo. I campi contrassegnati con * (asterisco) sono obbligatori.</p>
         <div class="pmd-card pmd-z-depth-2">
-          <div class="form-group pmd-textfield">
-            <label for="regular1" class="control-label">
-              Regular Input
+          <div class="form-group pmd-textfield form-preventivo">
+            <label for="nome" class="control-label">
+              Nome e Cognome*
             </label>
-            <input type="text" id="regular1" class="form-control">
+            <input type="text" id="nome" class="form-control">
           </div>
-          <!-- Password Input -->
-          <div class="form-group pmd-textfield">
-            <label for="password1" class="control-label">
-              Password
+          <div class="form-group pmd-textfield form-preventivo">
+            <label for="telefono" class="control-label">
+              Telefono*
             </label>
-            <input id="password1" class="form-control" type="password">
+            <input id="telefono" class="form-control" type="text">
           </div>
-          <!--Help Text Input -->
-          <div class="form-group pmd-textfield">
-            <label for="help1">
-              Input with help text
+          <div class="form-group pmd-textfield form-preventivo">
+            <label for="mail" class="control-label">
+              Indirizzo Mail*
             </label>
-            <input type="text" id="help1" class="form-control">
-            <p class="help-block"> Help text </p>
+            <input id="mail" class="form-control" type="text">
+          </div>
+          <div class="form-group pmd-textfield form-preventivo">
+            <label for="city" class="control-label">
+              Città
+            </label>
+            <input id="city" class="form-control" type="text">
+          </div>
+          <div class="form-group pmd-textfield form-preventivo">
+            <label for="address" class="control-label">
+              Indirizzo
+            </label>
+            <input id="address" class="form-control" type="text">
+          </div>
+          <div class="form-group pmd-textfield form-preventivo">
+            <label class="control-label">Richiesta*</label>
+            <textarea required class="form-control"></textarea>
+          </div>
+          <div class="clearfix">
+            <button class="btn pmd-btn-flat pmd-ripple-effect btn-primary btn-preventivo" type="button"><i class="material-icons input">input</i> Invia Richiesta</button>
           </div>
         </div>
       </div>

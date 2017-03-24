@@ -151,6 +151,32 @@ p {
   }
 }
 
+.preventivo-text {
+  margin-top: 30px;
+  font-size: 16px;
+}
+
+.form-preventivo {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.btn-preventivo {
+  margin: 15px;
+  float: right;
+}
+
+.mail_outline,
+.phone,
+.input {
+  position: relative;
+  top: 7px;
+}
+
+.no-padding-top {
+  padding-top: 0px!important;
+}
+
 /* footer styles */
 footer {
   min-height: 120px;
