@@ -25,6 +25,7 @@ p {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-repeat: repeat-y;
 }
 
 .banner {
@@ -159,6 +160,10 @@ p {
 .form-preventivo {
   padding-left: 5px;
   padding-right: 5px;
+}
+
+.first-input {
+  padding-top: 10px;
 }
 
 .btn-preventivo {
