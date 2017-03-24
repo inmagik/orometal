@@ -205,3 +205,19 @@ footer p {
 footer a {
   color: #f7f7f7;
 }
+
+.inmagik-credits {
+  border-top: 0.3px solid #686c73;
+  padding-top: 10px;
+  color: #c0f2ff;
+}
+
+.inmagik-credits a {
+  color: deepskyblue;
+  font-family: monospace;
+  font-size: 11px;
+}
+.inmagik-logo {
+  width: 20px;
+  height: auto;
+}
