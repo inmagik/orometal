@@ -58,6 +58,7 @@
   </div>
 
   <div class="container-fluid">
+    <form id="contact_form">
     <div class="row">
       <div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12 contacts">
         <p class="preventivo-text">Compila il form qui sotto per richiedere un preventivo. I campi contrassegnati con * (asterisco) sono obbligatori.</p>
@@ -66,13 +67,13 @@
             <label for="nome" class="control-label">
               Nome e Cognome*
             </label>
-            <input type="text" id="nome" class="form-control">
+            <input type="text" id="nome" name="name" class="form-control" required>
           </div>
           <div class="form-group pmd-textfield form-preventivo">
             <label for="telefono" class="control-label">
               Telefono*
             </label>
-            <input id="telefono" class="form-control" type="text">
+            <input id="telefono" name="telefono" class="form-control" type="text" required>
           </div>
           <!-- <div class="form-group pmd-textfield form-preventivo">
             <label for="mail" class="control-label">
@@ -94,14 +95,15 @@
           </div> -->
           <div class="form-group pmd-textfield form-preventivo">
             <label class="control-label">Richiesta*</label>
-            <textarea required class="form-control"></textarea>
+            <textarea id="richiesta" name="richiesta" required class="form-control"></textarea>
           </div>
           <div class="clearfix">
-            <button class="btn pmd-btn-flat pmd-ripple-effect btn-primary btn-preventivo no-padding-top" type="button"><i class="material-icons input">input</i> Invia Richiesta</button>
+            <button id="submit_mail" class="btn pmd-btn-flat pmd-ripple-effect btn-primary btn-preventivo no-padding-top" type="submit"><i class="material-icons input">input</i> Invia Richiesta</button>
           </div>
         </div>
       </div>
     </div>
+    </form>
   </div>
 
 
@@ -123,11 +125,30 @@
 
     <!-- jQuery before Propeller.js -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script type="text/javascript" src="js/map.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCr8eYQx_3zKXc-THfNwiaToKsK86cDKmg&callback=initMap"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
     <script type="text/javascript" src="js/propeller.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        $("#contact_form").validate({
+            submitHandler: submitHandler
+        });
+
+        function submitHandler(){
+          var subject = encodeURIComponent("Richiesta preventivo")
+          var richiesta = $("#richiesta").val();
+          var telefono = $("#telefono").val();
+          var nome = $("#nome").val();
+          var message = "Da: "+nome + "\n" + "Telefono: " + telefono + "\n\n" + richiesta
+          var body = encodeURIComponent(message);
+          var link = "mailto:orometalsrl@libero.it?subject="+subject+"&body="+body;
+          window.open(link, "_blank");
+          window.location = window.location;
+        }
+      });
+
+    </script>
 </body>
 
 </html>
